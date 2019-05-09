@@ -52,6 +52,7 @@ Custom styles
 ========================================
 */
 body {
+  background : #293f50;
   color: #888;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -63,45 +64,10 @@ body {
     *:before,
     *:after {
       -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
     }
-    .col-1-3 {
-      width:33.33%;
-    }
-    .col-2-3 {
-      width:66.66%;
-    }
-    .col-1-3, .col-2-3 {
-      display:inline-block;
-      vertical-align:top;
-    }
-
-    .grid,
-    .col-1-3,
-    .col-2-3 {
-      padding-left:15px;
-      padding-right:15px;
-    }
-    
-    /*
-    =====================================
-    Clearfix
-    =====================================
-    */
-    .group: before,
-    .group: after {
-      content:"";
-      display: table;
-    }
-    .group: after {
-      clear: both;
-    }
-    .group {
-      clear: both;
-      *zoom 1;
-    }
-    /*
+ /*
     =====================================
      A class that will serve as a contianer for all our elements to set a common width, centre the elements on the page, and apply some common horizontal padding 
      =====================================
@@ -115,16 +81,66 @@ body {
       padding-left: 30px;
       padding-right: 30px;
       }
+    .grid,
+    .col-1-3,
+    .col-2-3 {
+      padding-left:15px;
+      padding-right:15px;
+    }
+    .col-1-3,
+   .col-2-3 {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .col-1-3 {
+      width:33.33%;
+    }
+    .col-2-3 {
+      width:66.66%;
+    }
+
+
+    
+    /*
+    =====================================
+    Clearfix
+    =====================================
+    */
+    .group:before,
+    .group:after {
+      content: "";
+      display: table;
+    }
+    .group:after {
+      clear: both;
+    }
+    .group {
+      clear: both;
+      *zoom 1;
+    }
+   
+   /*
+   =======================================
+   Rows
+   =======================================
+   */
+   .row {
+    background: #fff;
+    min-width: 960px;
+    padding: 66px 0 44px 0;
+   }
     /*
     =====================================
     Typography
     =====================================
     */
-    h1, h3, h4, h5, p {
-      margin-bottom: 22px;
-    }
+  
     h1,h2,h3,h4 {
       color: #648880;
+    }
+  h1, h3, h4, h5, p {
+      margin-bottom: 22px;
     }
     h1{
       font-size: 36px;
@@ -141,7 +157,7 @@ body {
       font-size: 18px;
     }
     h5 {
-      color; #a9b2b9;
+      color: #a9b2b9;
       font-size: 14px;
       font-weight: 400;
       text-transform: uppercase;
@@ -149,34 +165,42 @@ body {
      strong {
       font-weight: 400;
      }
-     cite, em{
+     cite,
+      em{
       font-style: italic;
      }
      
-     .tagline {
-      margin: 66px 0 22px 0;
-      text-align: right;
-     }
-/*
-========================================
- Primary nav
- =======================================
- */
-     .primary-nav {
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-     }
+     /* 
+=============================================
+LINKS
+=============================================
+*/
+a {
+  color: #648880;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+
+ 
+ p a {
+  border-bottom: 1px solid #dfe2e5;
+ }
+
+ .primary-header a,
+ .primary-footer a {
+  color: #fff;
+ }
+
+  .primary-header a:hover,
+  .primary-footer a:hover {
+    color: #648880;
+  }
+
+
+
      /*
-     ====================================
-     Navigation
-     ====================================
-     */
-     .nav {
-      text-align: right;
-     }
-    /*
       ===================================
       Buttons
       ===================================
@@ -185,29 +209,22 @@ body {
         border-radius: 5px;
         display: inline-block;
         margin: 0;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 400;
+        letter-spacing: .5px;
+        text-transform: uppercase;
       }
       .btn-alt {
-        border: 1px solid #dfe2e5;
+        border: 1px solid #fff;
         padding: 10px 30px;
       }
-      /*
-      =====================================
-      Hero
-      =====================================
-      */
-      .hero {
-        line-height: 44px;
-        padding: 22px 80px 66px 80px;
-        text-align: center;
+
+      .btn-alt:hover {
+        background: #fff;
+        color: #648880;
       }
-      .hero h2 {
-        font-size: 36px;
-      }
-      .hero p {
-        font-size: 24px;
-        font-weight:100;
-      }
-    
+     
     /*
     =========================================
     Primry header
@@ -223,41 +240,68 @@ body {
        padding: 40px 0 22px 0;
        text-transform: uppercase;
     }
+
+.tagline {
+      margin: 66px 0 22px 0;
+      text-align: right;
+     }
+
+/*
+========================================
+ Primary nav
+ =======================================
+ */
+     .primary-nav {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+     }
     /*
     ========================================
     Primary footer
     ========================================
     */
-    .primary-footer small {
-      float:left;
-      font-weight: 400;
-    }
-    .primary-footer {
+.primary-footer {
       color: #648880;
       font-size: 14px;
       padding-bottom:44px;
       padding-top:44px;
     }
+    .primary-footer small {
+      float:left;
+      font-weight: 400;
+    }
 /*
-=============================================
-LINKS
-=============================================
-*/
-a:hover {
-  color: #a9b2b9;
-}
-a {
-  color: #648880;
-  text-decoration: none;
-}
- .teaser a:hover h2 {
+     ====================================
+     Navigation
+     ====================================
+     */
+     .nav {
+      text-align: right;
+     }
+    
+   /*
+      =====================================
+      Home
+      =====================================
+      */
+      .hero {
+        color: #fff;
+        line-height: 44px;
+        padding: 22px 80px 66px 80px;
+        text-align: center;
+      }
+      .hero h2 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 24px;
+        font-weight:100;
+      }
+    .teaser a:hover h3 {
   color: #a9b2b9;
  }
- p a {
-  border-bottom: 1px solid #dfe2e5;
- }
-
-
 
 
 
